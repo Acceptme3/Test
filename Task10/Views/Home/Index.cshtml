@@ -1,0 +1,25 @@
+﻿@model Task10.Domain.Entities.Investment
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Онлайн - калькулятор</h1>
+    <p>Введите сумму вклада и срок в месяцах и банк рассчитает итоговую сумму включая дивиденды</p>
+</div>
+
+<div class="container">
+    <form asp-controller="home" asp-action="Index" method="post" class="calc-form">
+        <div class="form-group">
+            <label for="deposit-amount">Сумма вклада:</label>
+            <input type="number" id="deposit-amount" asp-for="@Model.Deposit" required>
+        </div>
+        <div class="form-group">
+            <label for="deposit-term">Срок (в месяцах):</label>
+            <input type="number" id="deposit-term" asp-for="@Model.CountMonth" required>
+        </div>
+        <button type="submit" class="btn">Рассчитать</button>
+    </form>
+</div>
+
+

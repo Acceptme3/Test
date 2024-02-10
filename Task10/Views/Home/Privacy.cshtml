@@ -1,0 +1,18 @@
+﻿@model Task10.Domain.Entities.Investment
+@{
+    ViewData["Title"] = "Данные по вкладу";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Здесь отображаются данные расчета по вашему вкладу.</p>
+
+<div class="container">
+    <div class="result-container">
+        <h2>Результаты вклада</h2>
+        <div class="result">
+            <p>Сумма вклада: <span id="deposit-amount-placeholder">@Model.Deposit</span></p>
+            <p>Срок (в месяцах): <span id="deposit-term-placeholder">@Model.CountMonth</span></p>
+            <p>Итоговая сумма через указанный срок: <span id="final-amount-placeholder">@Model.TotalDeposit</span></p>
+        </div>
+    </div>
+</div>

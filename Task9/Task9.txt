@@ -1,0 +1,23 @@
+a) Количество всех студентов:
+
+SELECT COUNT(*) AS total
+FROM students;
+
+b) Количество студентов с именем "Иван":
+
+SELECT COUNT(*) AS count
+FROM students
+WHERE name = 'Иван';
+
+c) Количество студентов созданных после 1 сентября 2020 года:
+
+SELECT COUNT(*) AS count
+FROM students
+WHERE created_at > '2020-09-01';
+
+d) Максимальное количество детей у одного родителя:
+
+SELECT MAX(children_count) AS max_count
+FROM (SELECT parent_id, COUNT(*) AS children_count
+      FROM students
+      GROUP BY parent_id) AS child_counts;
